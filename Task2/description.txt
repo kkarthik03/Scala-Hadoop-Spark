@@ -1,0 +1,2 @@
+The input file is tokenized and mapped according to requirement, using map function. The reduceByKey is used to reduce the mapped nodes across various mappings and add the indegree as seen in code. sortByKey is used to sort the values and was done to compare output with the first task.
+Spark/Scala has simpler instructions and could be done with fewer lines of code compared to Hadoop/Java.

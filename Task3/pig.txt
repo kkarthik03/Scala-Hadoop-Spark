@@ -1,0 +1,6 @@
+ngrams = LOAD 's3://ngrams-english-mega/*' USING PigStorage('\t') as (ngram:chararray, year:int, count:float, books:float);
+grouped = GROUP ngrams BY ngram;
+summed_books = foreach grouped { sum1 = SUM(ngrams.count); sum2 = SUM(ngrams.books); generate group,sum1/sum2 as AVG; };
+ordered = ORDER summed_books by AVG DESC, group ASC;
+final_list = limit ordered 10;
+store final_list into 's3://cse-6242-kkannan32/OpMega/' using PigStorage('\t');

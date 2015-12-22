@@ -1,0 +1,1 @@
+The map function is used to obtain each token, target (to check incoming degree) and get the next token in a line to get its weight. This mapping is noted for each split of entire data. The reducer combines all the key value pairs and add the corresponding weights for corresponding nodes. The key value pair is written to the output file.
